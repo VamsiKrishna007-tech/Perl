@@ -1,0 +1,4 @@
+2025-03-02 12:30:45 [ERROR] Disk space low on server
+2025-03-02 12:32:10 [INFO] System backup completed
+2025-03-02 12:35:20 [WARNING] High memory usage detected
+2025-03-02 12:40:00 [ERROR] Network timeout occurred
