@@ -1,0 +1,782 @@
+
+//  command: #Set the context to patterns and sub context to scan
+//  command: set_context patterns -scan
+//  command: #Read the design source codes
+//  command: read_verilog ./design/c1.v
+//  command: #Elaborate the design top
+//  command: set_current_design c1
+//  Warning: 1 case: Net in netlist not connected
+//  Note: Issue set_current_design with the -show_elaboration_warnings option to see more details about previous warnings
+//  command: #Set the system mode to analysis
+//  command: set_system_mode analysis
+//  Warning: Rule FN1 violation occurs 1 times
+//  Flattening process completed, gates=9, PIs=4, POs=1, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin scan chain identification process, memory elements = 0.
+//  ---------------------------------------------------------------------------
+//  Circuit has no memory elements.
+//  command: #Run fault simulation for abcd =  0000
+//  command: set_pattern_source external c1_0.ascii
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          20.59%       27         7        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       22 (64.71%)
+  UO (unobserved)          5 (14.71%)
+  DS (det_simulation)      7 (20.59%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               20.59%
+  fault_coverage              20.59%
+  atpg_effectiveness          20.59%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /or1/OUT
+      1    EQ       /or1/IN0
+      1    EQ       /or1/IN1
+      1    EQ       /a
+      1    EQ       /and2/IN0
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  0001
+//  command: set_pattern_source external c1_1.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1           5.88%       32         2        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       18 (52.94%)
+  UO (unobserved)         14 (41.18%)
+  DS (det_simulation)      2 ( 5.88%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage                5.88%
+  fault_coverage               5.88%
+  atpg_effectiveness           5.88%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  0010
+//  command: set_pattern_source external c1_2.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          20.59%       27         7        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       24 (70.59%)
+  UO (unobserved)          3 ( 8.82%)
+  DS (det_simulation)      7 (20.59%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               20.59%
+  fault_coverage              20.59%
+  atpg_effectiveness          20.59%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /or1/OUT
+      1    EQ       /or1/IN0
+      1    EQ       /or1/IN1
+      1    EQ       /a
+      1    EQ       /and2/IN0
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: set_pattern_source external c1_3.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1           5.88%       32         2        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       20 (58.82%)
+  UO (unobserved)         12 (35.29%)
+  DS (det_simulation)      2 ( 5.88%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage                5.88%
+  fault_coverage               5.88%
+  atpg_effectiveness           5.88%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  0100
+//  command: set_pattern_source external c1_4.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          20.59%       27         7        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       24 (70.59%)
+  UO (unobserved)          3 ( 8.82%)
+  DS (det_simulation)      7 (20.59%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               20.59%
+  fault_coverage              20.59%
+  atpg_effectiveness          20.59%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /or1/OUT
+      1    EQ       /or1/IN0
+      1    EQ       /or1/IN1
+      1    EQ       /a
+      1    EQ       /and2/IN0
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  0101
+//  command: set_pattern_source external c1_5.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1           5.88%       32         2        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       20 (58.82%)
+  UO (unobserved)         12 (35.29%)
+  DS (det_simulation)      2 ( 5.88%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage                5.88%
+  fault_coverage               5.88%
+  atpg_effectiveness           5.88%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  0110
+//  command: set_pattern_source external c1_6.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          14.71%       29         5        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       23 (67.65%)
+  UO (unobserved)          6 (17.65%)
+  DS (det_simulation)      5 (14.71%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               14.71%
+  fault_coverage              14.71%
+  atpg_effectiveness          14.71%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      0    DS       /nor1/IN0
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  0111
+//  command: set_pattern_source external c1_7.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          11.76%       30         4        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       21 (61.76%)
+  UO (unobserved)          9 (26.47%)
+  DS (det_simulation)      4 (11.76%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               11.76%
+  fault_coverage              11.76%
+  atpg_effectiveness          11.76%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1000
+//  command: set_pattern_source external c1_8.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          35.29%       22        12        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       18 (52.94%)
+  UO (unobserved)          4 (11.76%)
+  DS (det_simulation)     12 (35.29%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               35.29%
+  fault_coverage              35.29%
+  atpg_effectiveness          35.29%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /a
+      0    EQ       /or1/IN0
+      0    DS       /z
+      0    EQ       /and2/OUT
+      0    EQ       /and2/IN0
+      0    EQ       /and2/IN1
+      0    EQ       /or1/OUT
+      0    EQ       /nor1/OUT
+      1    EQ       /nor1/IN1
+      1    EQ       /nor1/IN0
+      1    EQ       /d
+      1    DS       /and1/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1001
+//  command: set_pattern_source external c1_9.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          17.65%       28         6        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       21 (61.76%)
+  UO (unobserved)          7 (20.59%)
+  DS (det_simulation)      6 (17.65%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               17.65%
+  fault_coverage              17.65%
+  atpg_effectiveness          17.65%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /d
+      0    EQ       /nor1/IN1
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1010
+//  command: set_pattern_source external c1_10.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          41.18%       20        14        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       20 (58.82%)
+  DS (det_simulation)     14 (41.18%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               41.18%
+  fault_coverage              41.18%
+  atpg_effectiveness          41.18%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /a
+      0    EQ       /or1/IN0
+      1    DS       /b
+      1    EQ       /and1/IN0
+      0    DS       /z
+      0    EQ       /and2/OUT
+      0    EQ       /and2/IN0
+      0    EQ       /and2/IN1
+      0    EQ       /or1/OUT
+      0    EQ       /nor1/OUT
+      1    EQ       /nor1/IN1
+      1    EQ       /nor1/IN0
+      1    EQ       /d
+      1    DS       /and1/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1011
+//  command: set_pattern_source external c1_11.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          17.65%       28         6        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       23 (67.65%)
+  UO (unobserved)          5 (14.71%)
+  DS (det_simulation)      6 (17.65%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               17.65%
+  fault_coverage              17.65%
+  atpg_effectiveness          17.65%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /d
+      0    EQ       /nor1/IN1
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1100
+//  command: set_pattern_source external c1_12.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          41.18%       20        14        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       20 (58.82%)
+  DS (det_simulation)     14 (41.18%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               41.18%
+  fault_coverage              41.18%
+  atpg_effectiveness          41.18%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /a
+      0    EQ       /or1/IN0
+      1    DS       /c
+      1    EQ       /and1/IN1
+      0    DS       /z
+      0    EQ       /and2/OUT
+      0    EQ       /and2/IN0
+      0    EQ       /and2/IN1
+      0    EQ       /or1/OUT
+      0    EQ       /nor1/OUT
+      1    EQ       /nor1/IN1
+      1    EQ       /nor1/IN0
+      1    EQ       /d
+      1    DS       /and1/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1101
+//  command: set_pattern_source external c1_13.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          17.65%       28         6        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       23 (67.65%)
+  UO (unobserved)          5 (14.71%)
+  DS (det_simulation)      6 (17.65%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               17.65%
+  fault_coverage              17.65%
+  atpg_effectiveness          17.65%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /d
+      0    EQ       /nor1/IN1
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1110
+//  command: set_pattern_source external c1_14.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          29.41%       24        10        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       21 (61.76%)
+  UO (unobserved)          3 ( 8.82%)
+  DS (det_simulation)     10 (29.41%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               29.41%
+  fault_coverage              29.41%
+  atpg_effectiveness          29.41%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      0    DS       /and1/OUT
+      0    EQ       /and1/IN0
+      0    EQ       /and1/IN1
+      0    EQ       /b
+      0    EQ       /c
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      0    DS       /nor1/IN0
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: #Run fault simulation for abcd =  1111
+//  command: set_pattern_source external c1_15.ascii
+//  Warning: Previous external test pattern set has been deleted.
+//  command: add_faults -All
+//  command: simulate_patterns
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 9  #faults = 34
+//  Run fault simulation without storing patterns.  pattern source = 1 external patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   1          11.76%       30         4        1         0          0.00 sec
+//  command: report_statistics
+          Statistics Report
+           Stuck-at Faults
+-------------------------------------
+Fault Classes              #faults
+                           (total)
+---------------------  --------------
+  FU (full)                  34
+  -------------------  --------------
+  UC (uncontrolled)       19 (55.88%)
+  UO (unobserved)         11 (32.35%)
+  DS (det_simulation)      4 (11.76%)
+-------------------------------------
+Coverage
+  -------------------
+  test_coverage               11.76%
+  fault_coverage              11.76%
+  atpg_effectiveness          11.76%
+-------------------------------------
+#test_patterns                     0
+#simulated_patterns                1
+CPU_time (secs)                  2.8
+-------------------------------------
+
+//  command: report_faults -class DS
+
+    type    code    pin_pathname
+    ----   ------   ------------------------------------
+      1    DS       /nor1/OUT
+      1    EQ       /and2/IN1
+      1    DS       /z
+      1    EQ       /and2/OUT
+//  command: reset state
+//  command: exit -d
